@@ -8,7 +8,7 @@ interface Choice {
 }
 interface Question {
   questionText: string;
-  choices?: Choice[];
+  choices: Choice[];
 }
 export interface QuestionForm {
   questions: Question[]
@@ -17,7 +17,7 @@ export interface QuestionForm {
 function App() {
   const { handleSubmit, register, control } = useForm<QuestionForm>({
     defaultValues: {
-      questions: [{ questionText: "" }]
+      questions: [{ questionText: "", choices: [] }]
     }
   });
 
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit(_handleSubmit)} style={{ border: "2px solid gray", padding: "20px" }}>
+      <form onSubmit={handleSubmit(_handleSubmit)} style={{ border: "2px solid gray", padding: "20px", width: "400px" }}>
         <QuestionArray register={register} control={control} />
         <div style={{ marginTop: "20px", textAlign: "center" }}>
           <button type="submit">保存</button>
