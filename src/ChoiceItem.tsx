@@ -1,6 +1,6 @@
 import React from "react";
 import { UseFormRegister } from "react-hook-form";
-import { QuestionForm } from "./App";
+import { QuestionForm } from "./Survey";
 
 interface Props {
   register: UseFormRegister<QuestionForm>;
