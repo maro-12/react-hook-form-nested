@@ -6,3 +6,28 @@
   align-items: center;
   justify-content: center;
 }
+
+.form-container {
+  border: 2px solid gray;
+  padding: 20px;
+  width: 400px;
+}
+
+.question-add-action-wrapper {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.form-action-wrapper {
+  margin-top: 20px;
+  text-align: center 
+}
+
+.question-item-container {
+  border-bottom: 1px solid lightGray;
+  padding-bottom: 24px;
+}
+
+.choice-item-container {
+  padding-left: 24px;
+}

@@ -11,7 +11,7 @@ interface Props {
 
 const ChoiceItem = ({ register, questionIndex, removeChoice, choiceIndex }: Props) => {
   return (
-    <div style={{ paddingLeft: "24px" }}>
+    <div className={"choice-item-container"}>
       <label>
         <p>Choice {choiceIndex + 1}</p>
         <input type="text" {...register(`questions.${questionIndex}.choices.${choiceIndex}.choiceText` as const)} />

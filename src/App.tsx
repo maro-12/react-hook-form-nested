@@ -43,8 +43,8 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit(_handleSubmit)} style={{ border: "2px solid gray", padding: "20px", width: "400px" }}>
+    <div className={"container"}>
+      <form onSubmit={handleSubmit(_handleSubmit)} className={"form-container"}>
         {fields.map((field, index) => (
           <QuestionItem
             key={field.id}
@@ -54,12 +54,12 @@ function App() {
             removeQuestion={removeQuestion}
           />
         ))}
-        <div style={{ marginTop: "16px", textAlign: "center" }}>
+        <div className={"question-add-action-wrapper"}>
           <button onClick={addQuestion} type={"button"}>
             質問を追加
           </button>
         </div>
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
+        <div className={"form-action-wrapper"}>
           <button type="submit">保存</button>
         </div>
       </form>

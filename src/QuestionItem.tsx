@@ -30,7 +30,7 @@ const QuestionItem = ({ register, control, questionIndex, removeQuestion }: Prop
   }
 
   return (
-    <div style={{ borderBottom: "1px solid lightGray", paddingBottom: "24px" }}>
+    <div className={"question-item-container"}>
       <div>
         <label>
           <p>Question {questionIndex + 1}</p>
