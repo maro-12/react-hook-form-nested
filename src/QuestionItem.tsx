@@ -33,7 +33,7 @@ const QuestionItem = ({ register, control, questionIndex, removeQuestion }: Prop
     <div className={"question-item-container"}>
       <div>
         <label>
-          <p>Question {questionIndex + 1}</p>
+          <p>質問 {questionIndex + 1}</p>
           <input type="text" {...register(`questions.${questionIndex}.questionText` as const)} />
         </label>
         <button type={"button"} onClick={() => removeQuestion(questionIndex)} style={{ marginLeft: "16px" }}>

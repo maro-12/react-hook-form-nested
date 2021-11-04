@@ -13,7 +13,7 @@ const ChoiceItem = ({ register, questionIndex, removeChoice, choiceIndex }: Prop
   return (
     <div className={"choice-item-container"}>
       <label>
-        <p>Choice {choiceIndex + 1}</p>
+        <p>選択肢 {choiceIndex + 1}</p>
         <input type="text" {...register(`questions.${questionIndex}.choices.${choiceIndex}.choiceText` as const)} />
       </label>
       <button onClick={() => removeChoice(choiceIndex)} type={"button"} style={{ marginLeft: "16px" }}>
