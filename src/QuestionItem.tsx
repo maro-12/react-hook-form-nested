@@ -11,7 +11,7 @@ interface Props {
 }
 
 const QuestionItem = ({ register, control, questionIndex, removeQuestion }: Props) => {
-  const type = useWatch({
+  const questionType = useWatch({
     control,
     name: `questions.${questionIndex}.questionType` as const
   });
@@ -51,7 +51,7 @@ const QuestionItem = ({ register, control, questionIndex, removeQuestion }: Prop
           <input type={"radio"} value={"SELECT"} {...register(`questions.${questionIndex}.questionType` as const)} />
         </label>
       </div>
-      {type === "SELECT" && (
+      {questionType === "SELECT" && (
         <>
           {fields.map((field, index) => (
             <ChoiceItem
