@@ -39,13 +39,13 @@ const Survey = () => {
     remove(index);
   }
 
-  const _handleSubmit = (data: QuestionForm) => {
+  const doSubmit = (data: QuestionForm) => {
     console.log("data", data);
   }
 
   return (
     <div className={"container"}>
-      <form onSubmit={handleSubmit(_handleSubmit)} className={"form-container"}>
+      <form onSubmit={handleSubmit(doSubmit)} className={"form-container"}>
         {fields.map((field, index) => (
           <QuestionItem
             key={field.id}
