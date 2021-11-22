@@ -1,7 +1,22 @@
 
 import React from 'react';
+import * as yup from 'yup';
 import { useFieldArray, useForm } from 'react-hook-form';
 import QuestionItem from './QuestionItem';
+
+const choiceScheme = yup.object().shape({
+  choiceText: yup.string().required()
+});
+
+const questionScheme = yup.object().shape({
+  questionText: yup.string().required(),
+  questionType: yup.string().required(),
+  choices: yup.array().of(choiceScheme),
+});
+
+const scheme = yup.object().shape({
+  questions: yup.array().of(questionScheme).min(1)
+});
 
 type QuestionType = "FREE" | "SELECT";
 
@@ -40,6 +55,7 @@ const Survey = () => {
   }
 
   const doSubmit = (data: QuestionForm) => {
+    scheme.validate(data);
     console.log("data", data);
   }
 
