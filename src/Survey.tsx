@@ -1,6 +1,7 @@
 
 import React from 'react';
 import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useFieldArray, useForm } from 'react-hook-form';
 import QuestionItem from './QuestionItem';
 
@@ -35,10 +36,11 @@ export interface QuestionForm {
 }
 
 const Survey = () => {
-  const { handleSubmit, register, control } = useForm<QuestionForm>({
+  const { handleSubmit, register, control, formState: { errors } } = useForm<QuestionForm>({
     defaultValues: {
       questions: [{ questionText: "", questionType: "FREE", choices: [] }]
-    }
+    },
+    resolver: yupResolver(scheme)
   });
 
   const { fields, append, remove } = useFieldArray({
@@ -55,9 +57,10 @@ const Survey = () => {
   }
 
   const doSubmit = (data: QuestionForm) => {
-    scheme.validate(data);
     console.log("data", data);
   }
+
+  console.log("errors", errors);
 
   return (
     <div className={"container"}>
